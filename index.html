@@ -3,9 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+    <style>
+        body {
+    margin: 0;
+    background-color: #c0c0c0;
+}
+
+.encabezado {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: #F5F5F5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.95;
+}
+
+.logo__titulo {
+    display: inline-flex;
+    margin-left: 2rem;
+}
+
+.logo__encabezado {
+    width: 65px;
+    height: auto
+}
+
+.titulo {
+    margin: 0;
+    font-size: 1.5rem;
+    align-content: center;
+}
+
+.navegacion__item {
+    color: #F5F5F5;
+    text-decoration: none;
+    font-size: 1.125rem;
+    transition-property: color, transform;
+    transition-duration: 0.3s;
+    padding: 0.5rem;
+    display: inline-block;
+}
+
+.navegacion {
+    margin-right: 2rem;
+}
+
+.navegacion__item:hover {
+    color: #728FCE;
+    transform: scale(1.1);
+}
+
+.flex-box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0 17rem;
+    margin-top: 2.5rem;
+}
+
+.descripcion {
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 2rem 17rem;
+    color: #222;
+}
+
+.galeria {
+    margin: 3rem 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.imagenes {
+    max-width: 30%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0px #000;
+}
+
+@media (max-width: 480px) {
+    .encabezado {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: .4rem 0;
+    }
+
+    .logo__titulo {
+        margin-left: .2rem;
+    }
+
+    .titulo {
+        font-size: 1rem;
+    }
+
+    .logo__encabezado {
+        width: 30px;
+        position: relative;
+        height: 40px;
+        top: -10px;
+        margin-right: 0.5rem;
+    }
+
+    .navegacion__item {
+        font-size: .8rem;
+        padding: 0.25rem;
+    }
+
+    .navegacion {
+        margin-right: .5rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .subtitulo {
+        font-size: 1.3rem;
+        margin: 3rem 2rem;
+    }
+
+    .descripcion {
+        margin: 1rem 4rem
+    }
+
+    .galeria {
+        margin: 2rem 2rem;
+    }
+
+
+    .imagenes {
+        max-width: 45%;
+    }
+}
+    </style>
+    <title>Catálogo RRZ</title>
 </head>
-<body>
-    
+<body id="inicio">
+    <header class="encabezado">
+        <div class="logo__titulo">
+            <img src="logo1.3.png" alt="Logo de DISEÑOS Y SOLDADURA RRZ" class="logo__encabezado">
+            <h1 class="titulo">
+                DISEÑOS Y SOLDADURA RRZ
+            </h1>
+        </div>
+        <nav class="navegacion">
+            <a href=" https://ricardorz-11.github.io/Bienvenida-RRZ/" class="navegacion__item">MENÚ</a>
+            <a href="#inicio" class="navegacion__item">INICIO</a>
+            <a href="" class="navegacion__item">CONTACTO</a>
+        </nav>
+    </header>
+    <main>
+        <div class="flex-box1">
+            <h2 class="subtitulo">
+                Bienvenido al Catálogo de DISEÑOS Y SOLDADURA RRZ
+            </h2>
+            <p class="descripcion">
+                Aquí encontrarás una variedad de diseños y servicios de soldadura de alta calidad. Nuestro catálogo incluye productos personalizados y soluciones innovadoras para satisfacer tus necesidades. Explora nuestras opciones y descubre cómo podemos ayudarte a llevar tus proyectos al siguiente nivel.
+            </p>
+        </div>
+        <hr>
+        <section class="galeria">
+            <img class="imagenes" src="muñeco.jpeg" alt="">
+            <img class="imagenes" src="perchero 5.jpeg" alt="">
+            <img class="imagenes" src="casita.jpeg" alt="">
+            <img class="imagenes" src="casita.jpeg" alt="">
+            <img class="imagenes" src="casita.jpeg" alt="">
+        </section>
+    </main>
 </body>
 </html>

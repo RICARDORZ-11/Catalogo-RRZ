@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+    <meta name="description" content="catalogo de microempresa de heeria y soldadura con materiales tales como mayormente el alambron usado en figuras artesanales">
     <style>
         body {
     margin: 0;
@@ -70,6 +71,9 @@
     font-size: 2.5rem;
     margin: 0 17rem;
     margin-top: 2.5rem;
+    text-shadow: 1px 1px 1px #000;
+    color: #333;
+    letter-spacing: 5px;
 }
 
 .descripcion {
@@ -92,6 +96,7 @@
     max-width: 30%;
     border-radius: 20px;
     box-shadow: 0 0 20px 0px #000;
+    aspect-ratio: 1 / 1;
 }
 
 @media (max-width: 480px) {
@@ -176,12 +181,36 @@
         </div>
         <hr>
         <section class="galeria">
-            <img class="imagenes" src="muñeco.jpeg" alt="">
-            <img class="imagenes" src="perchero 5.jpeg" alt="">
-            <img class="imagenes" src="casita.jpeg" alt="">
-            <img class="imagenes" src="casita.jpeg" alt="">
-            <img class="imagenes" src="casita.jpeg" alt="">
+            <img class="imagenes" src="perchero-caramelo.jpeg" alt="figura de alambron de un hombre sosteniendo una maseta">
+            <img class="imagenes" src="perchero1.jpeg" alt="perchero de 5 ganchos ">
+            <img class="imagenes" src="casita-perchero.jpeg" alt="perchero con forma de casa colgable de 4 ganchos">
         </section>
     </main>
+    <div id="ventanaFlotante" style="display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); justify-content: center; align-items: center; cursor: zoom-out;" onclick="cerrarImagen()">
+        <span style="position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+        <img id="imgAmpliada" style="max-width: 85%; max-height: 85%; border-radius: 10px; box-shadow: 0 0 25px rgba(0,0,0,0.5);">
+    </div>
+
+    <script>
+        // 1. Seleccionamos todas las imágenes que tengan la clase 'imagenes'
+        const imagenesGaleria = document.querySelectorAll('.imagenes');
+        const ventana = document.getElementById('ventanaFlotante');
+        const imgGrande = document.getElementById('imgAmpliada');
+
+        // 2. Le añadimos el evento de "click" de forma automática a cada foto
+        imagenesGaleria.forEach(imagen => {
+            imagen.style.cursor = 'pointer'; // Asegura que muestre la manita de click
+            
+            imagen.addEventListener('click', () => {
+                ventana.style.display = 'flex'; // Muestra el fondo oscuro
+                imgGrande.src = imagen.src;     // Pone la foto que tocaste en grande
+            });
+        });
+
+        // 3. Función para cerrar la ventana cuando toques cualquier parte del fondo negro
+        function cerrarImagen() {
+            ventana.style.display = 'none'; // Esconde el contenedor de nuevo
+        }
+    </script>
 </body>
 </html>
